@@ -1,4 +1,3 @@
 #!/bin/bash
-user="$USER"
-id -Gn $user
+id -Gn $USER
 
