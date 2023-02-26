@@ -1,2 +1,2 @@
 #!/bin/bash
-awk 'FNR==6{print}' iacta
+head -3 iacta
