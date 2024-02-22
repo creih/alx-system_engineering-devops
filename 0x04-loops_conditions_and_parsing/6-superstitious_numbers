@@ -8,7 +8,7 @@ do
 		echo "$iter"
 		echo "bad luck from China"
 	;;
-	8)
+	9)
 		echo "$iter"
 		echo "bad luck from Japan"
 	;;
