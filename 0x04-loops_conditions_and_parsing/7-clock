@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # this is a hour and min displayer
 saha="0"
-while [ $saha -lt 12 ]; do
+while [ $saha -le 12 ]; do
 	munota=1
 	echo "Hour: $saha"
 	while [ $munota -lt 60 ]; do
