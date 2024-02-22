@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# this is the use of case in a loop
+iter="1"
+while [ $iter -le 20 ]
+do
+	case $iter in
+	4)
+		echo "$iter"
+		echo "bad luck from china"
+	;;
+	8)
+		echo "$iter"
+		echo "bad luck from japan"
+	;;
+	17)
+		echo "$iter"
+		echo "bad luck from italy"
+	;;
+	*)
+		echo "$iter"
+	esac
+	(( iter++ ))
+done
+		
