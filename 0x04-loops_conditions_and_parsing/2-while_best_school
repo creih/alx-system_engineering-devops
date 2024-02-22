@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # this is the while loop printing 10 tym a string
-pass = "0"
+bara = "0"
 while [ $pass -lt 10 ]
 do
-echo "Best School"
+	echo "Best School"
+	((bara++))
 done

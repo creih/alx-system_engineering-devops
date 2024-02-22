@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # this is the task 1 for printing string 10tyms
-for tym in [1..10]; do
+for tym in [1..10..1]; do
 	echo "Best School"
 done
