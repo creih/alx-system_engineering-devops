@@ -1,2 +1,5 @@
 #!/bin/bash
-cat 'Best School' >> '\*\\'"Best School"\'\\*$\?\*\*\*\*\*:)'
+
+touch '*\\\'"Best School"'\\*$?*****:)'
+echo "Best School" > '*\\\'"Best School"'\\*$?*****:)'
+echo >> '*\\\'"Best School"'\\*$?*****:)'
