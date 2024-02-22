@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # this is displaying string 10 tym usin until
-bara=0
-until [$bara -eq 10]
+bara="0"
+until [ $bara -ge 10 ]
 do
 	echo "Best School"
 	((bara++))
