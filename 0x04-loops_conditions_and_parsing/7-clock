@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# this is a hour and min displayer
+saha="0"
+while [ $saha -lt 12 ]; do
+	munota=1
+	while [ $munota -le 60 ]; do
+		if [ $munota -eq 60 ]; then
+			echo "Hour: $((saha+1))"
+			break
+		fi
+		echo "$munota"
+		((munota++))
+	done
+	((saha++))
+done
