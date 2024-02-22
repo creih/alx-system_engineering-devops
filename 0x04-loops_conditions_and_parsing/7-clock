@@ -3,11 +3,8 @@
 saha="0"
 while [ $saha -lt 12 ]; do
 	munota=1
-	while [ $munota -le 60 ]; do
-		if [ $munota -eq 60 ]; then
-			echo "Hour: $((saha+1))"
-			break
-		fi
+	echo "Hour: $saha"
+	while [ $munota -lt 60 ]; do
 		echo "$munota"
 		((munota++))
 	done
