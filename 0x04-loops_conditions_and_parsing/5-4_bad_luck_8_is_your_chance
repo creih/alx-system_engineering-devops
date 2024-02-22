@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# print best  scchool 1-10 unles its 4, 8
+go="1"
+while [ $go -le 10 ]
+do
+	if [ $go -eq 4 ]
+	then
+		echo "bad luck"
+	elif [  $go -eq 8 ]
+	then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	(( go++))
+done
+	
