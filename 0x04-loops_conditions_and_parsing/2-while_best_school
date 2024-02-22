@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # this is the while loop printing 10 tym a string
-bara = "0"
-while [ $pass -lt 10 ]
+bara="0"
+while [ $bara -lt 10 ]
 do
 	echo "Best School"
 	((bara++))
