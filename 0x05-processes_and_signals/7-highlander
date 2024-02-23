@@ -4,7 +4,7 @@ sig() {
 	echo "I am invincible!!!"
 	exit 0
 }
-trap 'sig' -SIGTERM
+trap 'sig' SIGTERM
 while true; do
 	echo "To infinity and beyond"
 	sleep 2
