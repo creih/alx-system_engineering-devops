@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# this is something about usin pgrep
+pgrep -l bash
