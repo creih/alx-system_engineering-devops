@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# advanced 100
+sig_t()  {
+	echo "I hate the kill command"
+	exit 0
+}
+sigi() {
+	echo "Y U no love me?!"
+	exit 0
+}
+Q_sig() {
+	rm "/var/run/myscript.pid"
+	kill -SIGTERM
+}
+fil="/var/run/myscript.pid"
+touch "$fil"
+cat "$$" > "$fil"
+while true; do
+	echo "To infinity and beyond"
+done
+trap 'sig_t' SIGTERM
+trap 'sigi' SIGINT
+trap 'Q_sig' SIGQUIT
