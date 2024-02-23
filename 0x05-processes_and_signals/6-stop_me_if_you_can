@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
 # stop task4 no kill or killall
-kora=$(pgrep -f "4-to_infinity_and_beyond")
-if [ -n "$kora" ]; then
-	echo "Terminated"
-	xargs pkill -f "$kora"
-fi
+pkill -f "4-to_infinity_and_beyond"
+
