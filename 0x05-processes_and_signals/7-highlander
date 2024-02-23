@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# task 7 about creating an unkillable process
+sig() {
+	echo "I am invincible!!!"
+	exit 0
+}
+trap 'sig' SIGTERM
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done

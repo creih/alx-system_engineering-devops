@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # stop task4 no kill or killall
-kora=$(pgrep -f "4-to_infinity_and_beyond")
+kora=$(pgrep -f "7-highlander")
 if [ -n "$kora" ]; then
 	echo "Terminated"
 	pkill -f "$kora"
