@@ -10,14 +10,13 @@ sigi() {
 }
 Q_sig() {
 	rm "/var/run/myscript.pid"
-	kill -SIGTERM
+	exit 0
 }
+trap 'sig_t;Q-sig' SIGTERM
+trap 'sigi;Q_sig' SIGINT
 fil="/var/run/myscript.pid"
 touch "$fil"
 cat "$$" > "$fil"
 while true; do
 	echo "To infinity and beyond"
 done
-trap 'sig_t' SIGTERM
-trap 'sigi' SIGINT
-trap 'Q_sig' SIGQUIT
