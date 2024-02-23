@@ -5,7 +5,7 @@ sig() {
 	exit 0
 }
 trap 'sig' SIGTERM
-while true; do
+while :
 	echo "To infinity and beyond"
 	sleep 2
 done
