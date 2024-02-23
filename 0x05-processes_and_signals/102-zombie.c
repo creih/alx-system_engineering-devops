@@ -1,8 +1,9 @@
-nclude <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
-void create_zombies(int num_zombies) {
+void create_zombies(int num_zombies)
+{
 	pid_t pid;
 	int i;
 
@@ -18,14 +19,12 @@ void create_zombies(int num_zombies) {
 		{
 			printf("Zombie process created, PID: %d\n", getpid());
 			exit(EXIT_SUCCESS);
-		}                                                                                                               }
-                  int main() {
-//                                                                                                                                 // Create 5 zombie processes
-//                                                                                                                                     create_zombies(5);
-//
-//                                                                                                                                         // Wait for user input to prevent the parent process from terminating immediately
-//                                                                                                                                             printf("Parent process (PID: %d) is waiting...\n", getpid());
-//                                                                                                                                                 getchar();
-//
-//                                                                                                                                                     return 0;
-//                                                                                                                                                     }
+		}
+	}
+}
+int main(void)
+{
+	create_zombies(5);
+	getchar();
+	return (0);
+}
