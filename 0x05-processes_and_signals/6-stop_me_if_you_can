@@ -3,5 +3,5 @@
 kora=$(pgrep -f "4-to_infinity_and_beyond")
 if [ -n "$kora" ]; then
 	echo "Terminated"
-	pkill -f "$kora"
+	echo "$kora" | xargs pkill -f "$kora"
 fi
