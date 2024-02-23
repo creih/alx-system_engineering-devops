@@ -14,6 +14,7 @@ Q_sig() {
 }
 trap 'sig_t;Q-sig' SIGTERM
 trap 'sigi;Q_sig' SIGINT
+trap 'Q_sig' SIGQUIT
 fil="/var/run/myscript.pid"
 touch "$fil"
 cat "$$" > "$fil"
