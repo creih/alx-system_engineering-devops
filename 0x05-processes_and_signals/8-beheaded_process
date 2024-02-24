@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# kill 7-higlander
+# kill  7-higlander
 p=$(pgrep -f "7-highlander")
 if [ -n "$p" ]; then
 	kill "$p"
