@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-# this is something about usin pgrep
+# this is displaying pid and name using pgrep
 pgrep -l bash
