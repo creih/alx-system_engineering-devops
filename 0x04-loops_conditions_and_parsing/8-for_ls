@@ -2,7 +2,7 @@
 # Loop through each file in the current directory
 for file in *; do
 	if [[ ! "$file" == .* && "$file" == *-* ]]; then
-                name=$(echo "$file" | cut -d'-' -f2-)
+                name="$(echo "$file" | cut -d'-' -f2-)"
                echo "$name"
 	fi
 done
