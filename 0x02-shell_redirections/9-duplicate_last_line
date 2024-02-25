@@ -1,3 +1,2 @@
 #!/bin/bash
-l_line=$(tail -n 1 iacta)
-echo "$l_line" >> iacta
+l_line=$(tail -n 1 iacta) | echo "$l_line" >> iacta
