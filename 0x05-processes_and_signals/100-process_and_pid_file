@@ -2,11 +2,9 @@
 # advanced 100
 sig_t()  {
 	echo "I hate the kill command"
-	exit 0
 }
 sigi() {
 	echo "Y U no love me?!"
-	exit 0
 }
 Q_sig() {
 	rm "/var/run/myscript.pid"
