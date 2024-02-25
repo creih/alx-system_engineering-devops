@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# an intro story using contents from /etc/passwd
+exec 5< /etc/passwd
+while IFS=: read -r owner pword oid gid inf hd ell; do
+	echo "The user $owner is part of the $gid gang, lives in $hd and rides $ell. $oid's place is protected by the passcode $pword, more info about the user here: $inf"
+done <&5
