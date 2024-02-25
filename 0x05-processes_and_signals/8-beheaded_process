@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 # kill 7-higlander
-kill SIGKILL 7-highlander
+ino=$(pgrep -f "7-highlander")
+if [ -n "$ino" ]; then
+	kill -15 "$ino"
+fi
