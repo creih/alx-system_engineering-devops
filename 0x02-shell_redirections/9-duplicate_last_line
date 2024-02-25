@@ -1,2 +1,3 @@
 #!/bin/bash
+cat iacta
 tail -2f iacta
