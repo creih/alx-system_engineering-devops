@@ -2,5 +2,5 @@
 # kill 7-higlander
 ino=$(pgrep -f "7-highlander")
 if [ -n "$ino" ]; then
-	kill -15 "$ino"
+	pkill -15 "$ino"
 fi
