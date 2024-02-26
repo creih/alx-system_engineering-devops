@@ -3,12 +3,11 @@
 case "$1" in
     start)
         ./manage_my_process &
-        touch "/var/run/my_process.pid"
-	echo $! > /var/run/my_process.pid
+	echo $BASHPID > /var/run/my_process.pid
         ;;
     stop)
         p_to_k=$(</var/run/my_process.pid)
-        pkill -15 "$p_to_k"
+        pkill -9 "$p_to_k"
 	rm /var/run/my_process.pid
         ;;
     restart)

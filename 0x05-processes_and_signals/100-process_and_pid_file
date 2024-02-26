@@ -2,7 +2,6 @@
 # advanced 100
 sig_t()  {
 	echo "I hate the kill command"
-	exit 0
 }
 sigi() {
 	echo "Y U no love me?!"
@@ -19,4 +18,5 @@ touch "$fil"
 echo "$BASHPID" > "$fil"
 while true; do
 	echo "To infinity and beyond"
+	sleep 2
 done
