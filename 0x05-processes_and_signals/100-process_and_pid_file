@@ -10,7 +10,7 @@ sigi() {
 }
 Q_sig() {
 	rm "/var/run/myscript.pid"
-	exit 0
+	kill "$$"
 }
 trap 'sig_t;Q-sig' SIGTERM
 trap 'sigi;Q_sig' SIGINT
