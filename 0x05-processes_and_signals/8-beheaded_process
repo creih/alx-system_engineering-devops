@@ -1,6 +1,3 @@
 #!/usr/bin/env bash
 # kill 7-higlander
-ino=$(pgrep -f "7-highlander")
-if [ -n "$ino" ]; then
-	pkill -15 "$ino"
-fi
+pkill -9 "7-highlander"
