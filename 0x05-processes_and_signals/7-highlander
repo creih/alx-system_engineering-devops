@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 # task 7 about creating an unkillable process
-trap 'I am invisible!!!' SIGTERM
-while 1; do
+slt() {
+	echo "I am invincible!!!"
+}
+trap 'slt' SIGTERM
+while true; do
 	echo "To infinity and beyond"
 	sleep 2
 done
