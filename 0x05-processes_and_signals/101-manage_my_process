@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# file to manage the axts of manage_my_process
+case "$1" in
+    start)
+        ./manage_my_process start
+        ;;
+    stop)
+        ./manage_my_process stop
+        ;;
+    restart)
+        ./manage_my_process restart
+        ;;
+    *)
+        exit 1
+esac
