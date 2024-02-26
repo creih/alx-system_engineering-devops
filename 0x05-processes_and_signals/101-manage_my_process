@@ -2,12 +2,15 @@
 # file to manage the axts of manage_my_process
 case "$1" in
     start)
+	echo "manage_my_process started"
         ./manage_my_process start
         ;;
     stop)
+	echo "manage_my_process stopped"
         ./manage_my_process stop
         ;;
     restart)
+	echo "manage_my_process restarted"
         ./manage_my_process restart
         ;;
     *)

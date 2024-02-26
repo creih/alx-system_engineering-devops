@@ -3,19 +3,18 @@
 case "$1" in
     start)
         ./manage_my_process &
-        echo $! > /var/run/my_process.pid
-        echo "manage_my_process started"
+        touch "/var/run/my_process.pid"
+	echo $! > /var/run/my_process.pid
         ;;
     stop)
-        pkill  "$(cat /var/run/my_process.pid)"
-        rm /var/run/my_process.pid
-        echo "manage_my_process stopped"
+        p_to_k=$(</var/run/my_process.pid)
+        pkill -15 "$p_to_k"
+	rm /var/run/my_process.pid
         ;;
     restart)
         $0 stop
         sleep 1
         $0 start
-        echo "manage_my_process restarted"
         ;;
     *)
         exit 1
