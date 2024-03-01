@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# task to display all Ipv4s
+ifconfig | grep -oE 'inet addr:[0-9.]*' | awk -F: '{print $2}'
