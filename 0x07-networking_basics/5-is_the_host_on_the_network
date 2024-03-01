@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # task to ping the first parameter
 if [ "$1" != NULL ]; then
-	ping "$1"
+	ping -c 5 "$1"
 else
-	echo "Usage: $0 {IP_ADDRESS}"
+	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
 fi
