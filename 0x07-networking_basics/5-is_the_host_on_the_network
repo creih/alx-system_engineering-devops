@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # task to ping the first parameter
-if [ "$1" ]; then
+if [ "$1" != NULL ]; then
 	ping "$1"
 else
 	echo "Usage: $0 {IP_ADDRESS}"
