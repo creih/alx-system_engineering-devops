@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Display listening ports with PID and program name
+netstat -tuln | awk '{print $4, $7}' | while read line; do
+	port=$(echo $line | awk '{split($1, arr, ":"); print arr[length(arr)]}')
+	protocol=$(echo $line | awk '{print $1}')
+
+	if [[ $line == *LISTEN* ]]; then
+		pid=$(echo $line | awk '{split($NF, arr, "/"); print arr[1]}')
+		program=$(echo $line | awk '{split($NF, arr, "/"); print arr[2]}')
+		echo "Port: $port, PID: $pid, Program: $program"
+	fi
+done

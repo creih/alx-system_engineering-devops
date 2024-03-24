@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# task adv to listen to prt 98
+nc -l -p 98

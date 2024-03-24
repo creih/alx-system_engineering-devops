@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# task for managing codes in other file
+case "$1" in
+    start)
+        ./manage_my_process &
+	echo $BASHPID > /var/run/my_process.pid
+        ;;
+    stop)
+        p_to_k=$(</var/run/my_process.pid)
+        pkill -9 "$p_to_k"
+	rm /var/run/my_process.pid
+        ;;
+    restart)
+        $0 stop
+        sleep 1
+        $0 start
+        ;;
+    *)
+        exit 1
+esac

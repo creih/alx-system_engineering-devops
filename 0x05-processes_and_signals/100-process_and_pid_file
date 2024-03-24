@@ -7,15 +7,16 @@ sigi() {
 	echo "Y U no love me?!"
 }
 Q_sig() {
-	rm "/var/run/myscript.pid"
-	kill "$$"
+	rm  "/var/run/myscript.pid"
+	exit 0
 }
 trap 'sig_t;Q-sig' SIGTERM
 trap 'sigi;Q_sig' SIGINT
 trap 'Q_sig' SIGQUIT
 fil="/var/run/myscript.pid"
 touch "$fil"
-cat "$$" > "$fil"
+echo "$BASHPID" > "$fil"
 while true; do
 	echo "To infinity and beyond"
+	sleep 2
 done

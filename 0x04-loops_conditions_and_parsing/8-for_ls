@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Loop through each file in the current directory
-for file in *; do
-	if [[ ! "$file" == .* && "$file" == *-* ]]; then
-                name="$(echo "$file" | cut -d'-' -f2-)"
+# remove 2 chars of each file name in current dir
+for flei in *; do
+	if [[ ! "$flei" == .* && -f "$flei" ]]; then
+                name=$(echo "$flei" | cut -d'-' -f 2-)
                echo "$name"
 	fi
 done
