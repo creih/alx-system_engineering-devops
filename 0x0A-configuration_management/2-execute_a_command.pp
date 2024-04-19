@@ -1,5 +1,5 @@
 # this file executes a kill commad
-exec { 'kill_killmenow_process':
+exec { 'killmenow':
   command  => 'pkill -f killmenow',
   unless   => 'pgrep -f killmenow',
   provider => 'shell',
