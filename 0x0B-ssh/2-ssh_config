@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# removing the password requirement before loging into server
+Host 54.162.45.57
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
