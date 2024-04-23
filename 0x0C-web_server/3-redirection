@@ -7,4 +7,5 @@ sed -i 'server_name _;/a\
 \\tlocation \/redirect_me{\
 \\t\treturn301 http:\/\/example.com\/new_page;\
 \\t} /etc/nginx/sites-available/default'
-service nginx restart
+service nginx stop
+service nginx start
