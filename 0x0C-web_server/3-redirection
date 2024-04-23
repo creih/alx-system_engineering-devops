@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# redirecting to 301 moved permenantly
+sudo apt-get update
+sudo apt-get install -y nginx
+cp /etc/nginx/sites-available/default etc/nginx/sites-available/default.bak
+sed -i 'server_name _;/a\
+\\tlocation \/redirect_me{\
+\\t\treturn301 http:\/\/example.com\/new_page;\
+\\t} /etc/nginx/sites-available/default'
+service nginx restart
