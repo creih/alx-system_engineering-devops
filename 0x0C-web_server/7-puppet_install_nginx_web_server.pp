@@ -26,7 +26,7 @@ file { '/usr/share/nginx/html/index.html':
   content => "Hello World!\n",
 }
 
-# Restart Nginx service after configuration changes
+# Restart the Nginx service after configuration changes
 service { 'nginx':
   ensure    => running,
   enable    => true,
