@@ -1,0 +1,25 @@
+#!/bin/bash
+# Update package list and install nginx
+
+sudo apt-get update
+sudo apt-get install -y nginx
+suddo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+
+sudo sed -i '/server_name _;/a \
+\\tlocation \/404 {\
+\\t\tinternal;\
+\\t\talias \/usr\/share\/nginx\/html\/404.html;\
+\\t}' /etc/nginx/sites-available/default
+
+echo "<!DOCTYPE html>
+<html>
+<head>
+<title>404 Not Found</title>
+</head>
+<body>
+<h1>Ceci n'est pas une page</h1>
+</body>
+</html>" | sudo tee /usr/share/nginx/html/404.html > /dev/null
+
+sudo service nginx stop
+sudo service nginx start
