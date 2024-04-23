@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 # hosting your file on the server using scp
-if ["$#" -ne 4]; then
+if [ "$#" -ne 4 ]; then
 	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 	exit 1
 fi
-file_path = "$1"
-server_ip = "$2"
-username  = "$3"
-ssh_add = "$4"
+file_path="$1"
+server_ip="$2"
+username="$3"
+ssh_add="$4"
 scp -o StrictHostKeyChecking=no -i "$ssh_add" "$file_path" "$username@$server_ip":~/
-if ["$?" eq 0]; then
+if [ "$?" -eq 0 ]; then
 	echo "the file was sent succesfully"
 else
 	echo "some error occured please retry"
