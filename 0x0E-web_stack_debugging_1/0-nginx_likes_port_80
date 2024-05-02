@@ -1,3 +1,19 @@
 #!/usr/bin/env/bash
 # mking an alias for my server ip
-echo "54.162.45.57 0 www.3rr.tech">>/etc/hosts
+if ! command -v nginx &> /dev/null
+then
+    # Install Nginx if not installed
+    sudo apt update && sudo apt install nginx -y
+fi
+
+# Configure Nginx to listen on port 80
+sudo sed -i 's/\(listen \) [0-9]*;/\180;/' /etc/nginx/sites-available/default
+
+# Restart Nginx
+sudo service nginx restart
+
+# Ensure Nginx is listening on all active IPv4 IPs
+sudo sed -i 's/\(listen \) [0-9]*;/\180 default_server;/' /etc/nginx/nginx.conf
+
+# Restart Nginx again
+sudo service nginx restart
