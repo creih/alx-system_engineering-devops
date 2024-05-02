@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# setting up the 2nd server web-02 as the 1st web-01
+sudo apt-get update
+sudo apt-get install -y nginx
+echo "Hello World!" | sudo tee /var/www/html/index.html
+str_1="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/creih permanent;"
+sudo sed -i "s/server_name _:$str_1/" /etc/nginx/sites-enabled/default
+echo "Ceci n' est pas une page" | sudo tee /var/www/html/404.html
+sudo nano /etc/nginx/conf.d/custom_response_header.conf
+sudo sed -i "srver_name _;/a add-header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
+sudo service stop
+sudo service start
