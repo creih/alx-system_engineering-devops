@@ -1,4 +1,4 @@
-#!/usr/bin/env/bash
+#!/usr/bin/env bash
 # mking an alias for my server ip
 if ! command -v nginx &> /dev/null
 then
