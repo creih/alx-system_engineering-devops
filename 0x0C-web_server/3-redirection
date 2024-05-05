@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # Update package index and redirect
+sudo apt-get update
+sudo apt-get install -y nginx
+echo "Hello World!" | sudo tee /var/www/html/index.html
 new_str="server_name _:/\n\trewrite ^\/redirect_me https:\/\/github.com\/creih permanent; "
 sudo sed -i "s/server_name _:/$new_str$" /etc/nginx/sites-available/default
 sudo service nginx stop
