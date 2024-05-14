@@ -1,0 +1,7 @@
+#!/bin/bash
+# Check if an argument is provided, Run whoami command under specified user
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <username>"
+    exit 1
+fi
+sudo -u $1 whoami
