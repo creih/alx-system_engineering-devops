@@ -1,5 +1,5 @@
 #!/bin/bash
-# Check if an argument is provided, Run whoami command under specified user
+# Check if 1 argument is provided, Run whoami command under specified user
 if [ $# -ne 1 ]; then
     echo "Usage: $0 <username>"
     exit 1
