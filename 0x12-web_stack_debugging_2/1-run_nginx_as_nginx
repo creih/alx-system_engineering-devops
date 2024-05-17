@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# task 1 abiut reconfiguring a server to avoid using root usr
+# task 1 abiut reconfiguring a server to avoid using root user
+sudo service nginx stop
+sed -i 's/#user www-data/user nginx/' /etc/nginx/nginx.conf
+sudo sed -i 's/80/8080/' /etc/nginx/sites-enabled/default
+chmod 644 /etc/nginx/nginx.conf
+chown nginx:nginx /etc/nginx/ -R
+for pid in $(pidof apache2); do
+	kill "$pid"
+done
+sudo -u nginx service nginx start
 
-if ! id nginx &> /dev/null; then
-  adduser --system --group --no-shell nginx
-fi
-# Change ownership of Nginx directories
-chown -R nginx:nginx /etc/nginx /var/lib/nginx
-# Update Nginx configuration
-sed -i 's/user root;/user nginx;/' /etc/nginx/nginx.conf
-# Update worker_processes dir
-chmod -R 755 /var/lib/nginx/sockets
