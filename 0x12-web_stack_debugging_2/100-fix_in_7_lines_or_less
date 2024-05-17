@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# task 100 yo kugira task 1 nto ikagira 7 lines
+pkill -f httpd|apache2
+# Ensure nginx user exists
+id nginx &>/dev/null || adduser --system --group --no-shell nginx
+sed -i 's/user root;/#user root;\nuser nginx;/; s/listen 80;/listen 8080;/' /etc/nginx/nginx.conf
+su -s /bin/bash nginx -c "/usr/sbin/nginx -g 'daemon off;'"
