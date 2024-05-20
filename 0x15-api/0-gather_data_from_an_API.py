@@ -15,7 +15,7 @@ if __name__ == "__main__":
     par = {"userId": em_id}
     tods_r = requests.get(url + "todos", params=par)
     tod = tods_r.json()
-    izarangiye =  []
+    izarangiye = []
     for tos in tod:
         if tos.get("completed") is True:
             izarangiye.append(tos.get("title"))
