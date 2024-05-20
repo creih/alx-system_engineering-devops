@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 """
-this module is for task 0 in 0x15-API project and is displaying
+This module ni iya task 0 muri 0x15-API project and is displaying
 a user name and a set of completed tasks.
 """
 import requests
 import sys
-
 
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
@@ -19,10 +18,17 @@ if __name__ == "__main__":
     for tos in tod:
         if tos.get("completed") is True:
             izarangiye.append(tos.get("title"))
-    print("Employee {} is done with tasks ({}/{}):".format(
+    
+    output = "Employee {} is done with tasks ({}/{}):".format(
         usr.get("name"),
         len(izarangiye),
         len(tod)
-    ))
+    )
+    with open("student_output", "w") as f:
+        f.write(output + "\n")
+        for combo in izarangiye:
+            f.write("\t {}\n".format(combo))
+
+    print(output)
     for combo in izarangiye:
         print("\t {}".format(combo))
