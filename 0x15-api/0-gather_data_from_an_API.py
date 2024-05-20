@@ -19,7 +19,7 @@ if __name__ == "__main__":
     for tos in tod:
         if tos.get("completed") is True:
             izarangiye.append(tos.get("title"))
-    print("Employee {} is done with tasks ({}/{})".format(
+    print("Employee {} is done with tasks({}/{})".format(
         usr.get("name"),
         len(izarangiye),
         len(tod)
