@@ -5,10 +5,10 @@ file { '/etc/apache2/sites-available/000-default.conf':
   mode    => '0644',
   owner   => 'root',
   group   => 'root',
-  require => Package['apache2'],
+  require => Package['apache'],
 }
 
-service { 'apache2':
+service { 'apache':
   ensure    => running,
   enable    => true,
   subscribe => File['/etc/apache2/sites-available/000-default.conf'],
