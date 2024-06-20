@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """this module is for reddit APIs usage"""
+
+
 import requests
-
-
 def number_of_subscribers(subreddit):
     """ tasks' function as requested in the task."""
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
