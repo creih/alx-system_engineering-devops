@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """this module is for reddit APIs usage"""
 import requests
 
