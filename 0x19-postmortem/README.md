@@ -30,6 +30,7 @@ Requirements:
 While postmortem format can vary, stick to this one so that you can get properly reviewed by your peers.
 
 Please, remember that these blogs must be written in English to further your technical ability in a variety of settings.
-
+Answer link: <https://medium.com/@eriscorplock/an-ai-imagined-postmortem-about-an-e-commerce-website-breakdown-f1b6a3ac6d2d>
 task 1:
-
+make it more appealing by adding some diagrms and pictures even humour.
+answer link same as task 0's: <https://medium.com/@eriscorplock/an-ai-imagined-postmortem-about-an-e-commerce-website-breakdown-f1b6a3ac6d2d>
