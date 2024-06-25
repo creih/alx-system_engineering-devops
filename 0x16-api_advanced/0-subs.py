@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """this module is for reddit APIs usage"""
-import requests
+import requests # type: ignore
 
 
 def number_of_subscribers(subreddit):
